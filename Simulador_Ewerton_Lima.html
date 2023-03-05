@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Simulator</title>
+    <link rel="icon" href="logo.oficial.png">
+    <style>
+        body{
+    font: normal 15pt arial;
+    background: #EE7752;
+    animation: mudarFundo 5s ease infinite;
+    }
+ 
+
+    header{
+    color: white;
+    text-align: center;
+    }
+    section{
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px;
+    width: 500px;
+    margin: auto;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
+    }
+    footer{
+    color: #fff;
+    text-align: center;
+    font-family: italic;
+    }
+    img{
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+  
+    }
+    div{
+        text-align: center;
+        padding: 8px;
+    }
+    
+
+    @keyframes mudarFundo {
+  0% {
+    background-color: #EE7752;
+  }
+  25%{
+    background-color: #5b3ce7;
+  }
+  50% {
+    background-color: #E73C7E;
+  }
+  75%{
+    background-color: #23A6D5;
+  }
+  100% {
+    background-color: #23D5AB;
+  }
+}
+a{
+    text-decoration:none; 
+    display: block;
+    margin-top: 15px;
+    font-family: arial;
+    font-style: normal;
+    color:black;
+    font-weight: 500;
+    font-size: 12px;  
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Simulador Financeiro</h1>
+         </header>
+         <section>
+             <div id="mensagem">
+           <p>Insira seu nome:
+            <input  id="input_nome">
+           </p>
+           <p>Insira quantidade de hectáres que você possuei na sua plantação:
+            <input id="input_hectar">
+           </p>
+           <input type="button" value="Simule aqui" onclick="verificar()">
+             </div>
+  
+             <div id="res">
+      Preencha os dados acima para ver o resultado
+             </div>
+         </section>
+       
+     
+</body>
+</html>
+<script>
+    function verificar(){
+        let nome = input_nome.value
+        let qtd_hectares = Number(input_hectar.value)
+        let total_hectar = qtd_hectares * 10000
+        let porcentagem_perda = total_hectar * 0.30
+
+
+        res.innerHTML = `   <h4 style="font-size: 23px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">Olá ${nome} voce está perdendo 30% em sua plantação! esquivalente a  </h4><div style="color: #ff0606;">${porcentagem_perda}M²</div><br>
+        Caso não queria passar por essa situacão acesse o link abaixo
+        <br>
+         <a href="">Improvment Cocoa</a>`
+    }
+</script>
