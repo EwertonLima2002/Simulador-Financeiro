@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    peso total no elevador:
+    <input id="input_peso_elevador">
+    <button onclick="calcular()">Calcular</button>
+    <section>
+        <p id="res"></p>
+    </section>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var peso_elevador = Number(input_peso_elevador.value)
+        res.innerHTML = ''
+        if (peso_elevador < 500) {
+            res.innerHTML = `Elevador vai se mover`
+        }
+        if (peso_elevador >= 500) {
+            res.innerHTML = `Alguém precisa descer do elevador`
+        }
+    }
+</script>
